@@ -25,8 +25,6 @@ if __name__ == "__main__":
     """ここでprint_processは他人が作成した関数と考え、例外処理で堅牢に実装します。"""
     try:
         for number, fizzbuzz_result in fizzbuzz_results:
-            print_process(number, fizzbuzz_result)  # FizzBuzzの結果を出力
-            
-        print_process(3, "Buzz")  # 3は"Fizz"であるべきなのに"Buzz"を渡す
+            print_process(number+3, fizzbuzz_result)  # FizzBuzzの結果を出力
     except Exception as e:
         print(f"エラー２: {e}")

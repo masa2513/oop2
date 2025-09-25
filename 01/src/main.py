@@ -6,7 +6,7 @@ from utils import fizzbuzz_function, list_generator_function, print_process
 if __name__ == "__main__":
     """ここでlist_generator_functionは他人が作成した関数と考え、例外処理で堅牢に実装します。"""
     try:
-        factory = list_generator_function("string")  # 文字列を渡してエラーを発生させる
+        factory = list_generator_function("2")  # 文字列を渡してエラーを発生させる
     except Exception as e:
         print(f"エラー１: {e}")
         exit(1)

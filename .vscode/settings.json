@@ -1,0 +1,6 @@
+{
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/Users/k24044kk/.local/share/mise/shims/node"
+    },
+    "editor.renderWhitespace": "boundary"
+}

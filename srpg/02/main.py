@@ -51,24 +51,26 @@ if __name__ == '__main__':
 
     # 例１
     print("Hero全員のHPが下がるトラップ（デバフ）発動") # フレーバーテキスト
-    # Hero.buf_status['hp']を変化させると良いのでは？
+    Hero.buf_status['hp'] = -20  # Hero全員のHPが20下がるデバフ
+    print(f'Hero.buf_status = {Hero.buf_status}') # Heroクラスのbuf_statusの値を確認
     print_heros(heros) # ヒーローのリストを表示する関数を呼び出し
 
     print(f"{hero1.name}は魔法使いに転職した") # フレーバーテキスト
-    hero1 = Magician(name=hero1.name, hp=hero1.getHP(), mp=150) # Magicianクラスのインスタンスを生成，hpはgetHP()で取得
+    hero1 = Magician(name=hero1.name, hp=hero1.hp, mp=150) # Magicianクラスのインスタンスを生成，hpはgetHP()で取得
     heros[0] = hero1 # herosリストの最初の要素を更新
     check_instance_type(heros) # ヒーローのリストを表示する関数を呼び出し
     print_heros(heros) # ヒーローのリストを表示する関数を呼び出し
 
     # 例２
-    print(f"{hero1.name}はHero全員のHPが下がる呪い（デバフ）をうけた") # フレーバーテキスト
-    # hero1.buf_status['hp']を変化させると良いのでは？
-    # print(f'Hero.buf_status = {Hero.buf_status}') # Heroクラスのjob_statusの値を確認
+    print(f"{hero1.name}はHero全員のHPが更に下がる呪い（デバフ）をうけた") # フレーバーテキスト
+    Hero.buf_status['hp'] -= 15  # さらにHPが下がるデバフ（累積ではなく上書き）
+    print(f'Hero.buf_status = {Hero.buf_status}') # Heroクラスのbuf_statusの値を確認
     print_heros(heros) # ヒーローのリストを表示する関数を呼び出し
 
     # 例３
     print(f"{hero1.name}は罠にかかって味方の{hero2.name}を魔法で攻撃してしまった") # フレーバーテキスト
-    # hero1.magic_attack(hero2) # hero1がhero2に魔法攻撃
+    hero2.hp = hero2.getHP() - 10  # hero2のHPを10下げる
+    hero1.magic_attack(hero2) # hero1がhero2に魔法攻撃
     print_heros(heros) # ヒーローのリストを表示する関数を呼び出し
 
     print(f"{hero1.name}と{hero2.name}の今日の冒険はここまで") # フレーバーテキスト

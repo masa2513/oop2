@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>占い結果</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='uranai.css') }}">
+</head>
+<body class="uranai-body">
+  <main class="uranai-card">
+    <h1>占い結果</h1>
+    <section class="result-panel">
+      <p class="result-name">占った人: <strong>{{ name }}</strong></p>
+      {% if birthday %}
+      <p class="result-birthday">生年月日: {{ birthday }}</p>
+      {% endif %}
+      <div class="result-score">
+        <span class="label">今日の運勢</span>
+        <span class="score">★ {{ result_score }} / 5 ★</span>
+      </div>
+      <p class="fortune-message {% if is_error %}fortune-error{% endif %}">
+        {{ fortune_message }}
+      </p>
+    </section>
+    <div class="actions">
+      <a href="/uranai" class="uranai-button secondary">もう一度占う</a>
+      <a href="/" class="uranai-button ghost">トップへ戻る</a>
+    </div>
+  </main>
+</body>
+</html>
+

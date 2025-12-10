@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "鈴木 花子",
+        "phone": "080-9999-8888",
+        "email": "hanako@example.com"
+    },
+    {
+        "id": 2,
+        "name": "本田　太郎",
+        "phone": "080-9999-8888",
+        "email": "hanako@example.com"
+    }
+]
